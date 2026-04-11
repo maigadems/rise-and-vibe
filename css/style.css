@@ -1950,6 +1950,18 @@ section {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .page-hero-bg::after {
+    background: linear-gradient(
+      to top,
+      rgba(5,5,5,1) 0%,
+      rgba(5,5,5,0.75) 40%,
+      rgba(5,5,5,0.3) 70%,
+      transparent 100%
+    );
+  }
+}
+
 .page-hero-bg {
   position: absolute;
   inset: 0;
@@ -2992,21 +3004,52 @@ section {
   .track-duration { font-size: 0.7rem; }
 
   /* ── Page artiste mobile ── */
-  .page-hero { min-height: 55vh; }
-  .artiste-hero-name { font-size: clamp(2.8rem, 12vw, 5rem); }
-  .artiste-hero-meta {
+  .page-hero {
+    min-height: 60vh;
+    max-height: 75vh;
+  }
+  .page-hero-bg img {
+    object-position: center 40%;
+  }
+  .page-hero-content {
+    padding: 2rem 1.2rem;
+  }
+  .artiste-hero-label { font-size: 0.6rem; }
+  .artiste-hero-name  { font-size: clamp(2.8rem, 12vw, 4.5rem); margin-bottom: 0.7rem; }
+  .artiste-hero-meta  {
     flex-direction: column;
-    gap: 0.4rem;
     align-items: flex-start;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
   }
   .artiste-hero-meta-item {
     font-size: 0.72rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
-  .artiste-bio p { font-size: 0.88rem; }
+
   .artiste-content { padding: 2.5rem 0; }
-  .artiste-layout { gap: 2rem; }
+  .artiste-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .artiste-sidebar {
+    position: static;
+    top: auto;
+  }
+  .artiste-bio { font-size: 0.88rem; line-height: 1.85; }
+  .artiste-bio p + p { margin-top: 1rem; }
   .artiste-support-card { padding: 1.4rem; }
+  .support-amounts { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
   .gallery-item { width: 130px; height: 165px; }
+
+  .artiste-discography { padding: 2.5rem 0; }
+  .discography-item { gap: 1rem; padding: 0.9rem 0; }
+  .discography-cover { width: 54px; height: 54px; }
+  .discography-title { font-size: 0.9rem; }
+  .discography-year  { font-size: 0.8rem; }
 
   /* ── Touch targets ── */
   .btn, a.btn, button {
