@@ -3005,51 +3005,59 @@ section {
 
   /* ── Page artiste mobile ── */
   .page-hero {
-    min-height: 60vh;
-    max-height: 75vh;
-  }
-  .page-hero-bg img {
-    object-position: center 40%;
+    min-height: 65vh !important;
+    max-height: 70vh;
   }
   .page-hero-content {
-    padding: 2rem 1.2rem;
+    padding: 1.5rem 1.2rem 2rem;
   }
-  .artiste-hero-label { font-size: 0.6rem; }
-  .artiste-hero-name  { font-size: clamp(2.8rem, 12vw, 4.5rem); margin-bottom: 0.7rem; }
-  .artiste-hero-meta  {
+
+  .artiste-hero-label {
+    font-size: 0.58rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 0.5rem;
+  }
+  .artiste-hero-name {
+    font-size: clamp(3rem, 14vw, 5rem);
+    letter-spacing: 3px;
+    margin-bottom: 0.8rem;
+  }
+  .artiste-hero-meta {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.4rem;
     flex-wrap: nowrap;
   }
   .artiste-hero-meta-item {
-    font-size: 0.72rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+    font-size: 0.7rem;
+    max-width: calc(100vw - 2.4rem);
+    white-space: normal;
+    word-break: break-word;
   }
 
   .artiste-content { padding: 2.5rem 0; }
   .artiste-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
   }
   .artiste-sidebar {
     position: static;
     top: auto;
   }
-  .artiste-bio { font-size: 0.88rem; line-height: 1.85; }
-  .artiste-bio p + p { margin-top: 1rem; }
-  .artiste-support-card { padding: 1.4rem; }
-  .support-amounts { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
-  .gallery-item { width: 130px; height: 165px; }
+  .artiste-bio { font-size: 0.88rem; line-height: 1.8; }
+  .artiste-bio p + p { margin-top: 0.9rem; }
+  .artiste-support-card { padding: 1.3rem; }
+  .support-amounts { gap: 0.5rem; }
 
   .artiste-discography { padding: 2.5rem 0; }
-  .discography-item { gap: 1rem; padding: 0.9rem 0; }
-  .discography-cover { width: 54px; height: 54px; }
-  .discography-title { font-size: 0.9rem; }
-  .discography-year  { font-size: 0.8rem; }
+  .discography-item { gap: 0.9rem; padding: 0.85rem 0.5rem; }
+  .discography-cover { width: 52px; height: 52px; flex-shrink: 0; }
+  .discography-info  { min-width: 0; }
+  .discography-title { font-size: 0.88rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .discography-meta  { font-size: 0.72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .discography-year  { font-size: 1rem; flex-shrink: 0; }
 
   /* ── Touch targets ── */
   .btn, a.btn, button {
