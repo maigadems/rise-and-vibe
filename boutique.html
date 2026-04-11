@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique — Rise & Vibes Studio</title>
+  <meta name="description" content="Boutique officielle Rise & Vibes — T-shirts, Hoodies, Casquettes, Posters et goodies exclusifs." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .boutique-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      line-height: 0.9;
+      letter-spacing: 4px;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .boutique-hero-title span {
+      -webkit-text-stroke: 1px rgba(240,240,240,0.25);
+      color: transparent;
+    }
+
+    .boutique-hero-sub {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-detail-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(5,5,5,0.92);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .product-detail-overlay.open {
+      display: flex;
+    }
+
+    .product-detail-modal {
+      background: var(--black-3);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      max-width: 800px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      max-height: 90vh;
+    }
+
+    @media (max-width: 600px) {
+      .product-detail-modal { grid-template-columns: 1fr; }
+    }
+
+    .product-detail-img {
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+
+    .product-detail-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-detail-body {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+    }
+
+    .product-detail-category {
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-detail-name {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+
+    .product-detail-price {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+    }
+
+    .product-detail-desc {
+      font-size: 0.85rem;
+      color: var(--gray-light);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-sizes {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .size-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .size-btn:hover, .size-btn.active {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--gray);
+      transition: color var(--transition);
+      line-height: 1;
+      z-index: 10;
+    }
+
+    .modal-close:hover { color: var(--white); }
+
+    .product-note {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 3px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <img src="ressources/logo/logo principale.jpg" alt="Rise & Vibes" />
+    <span class="nav-logo-text">RISE<span>&</span>VIBES</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#nouveautes">Nouveautés</a></li>
+    <li><a href="index.html#studio">Studio</a></li>
+    <li><a href="index.html#tarifs">Tarifs</a></li>
+    <li><a href="index.html#artistes">Artistes</a></li>
+    <li><a href="boutique.html" style="color:var(--red)">Boutique</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Réserver</a></li>
+  </ul>
+  <div class="nav-toggle">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- BOUTIQUE HERO -->
+<section class="boutique-hero">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;margin-bottom:1rem;">Rise &amp; Vibes Merch</div>
+    <div class="boutique-hero-sub">Collection officielle</div>
+    <h1 class="boutique-hero-title">
+      <span>THE</span><br/>
+      STORE
+    </h1>
+  </div>
+</section>
+
+<!-- BOUTIQUE GRID -->
+<section style="background:var(--black);padding:4rem 0;">
+  <div class="container">
+
+    <!-- Filters -->
+    <div class="boutique-filters fade-in">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="vetements">Vêtements</button>
+      <button class="filter-btn" data-filter="accessoires">Accessoires</button>
+      <button class="filter-btn" data-filter="collector">Collector</button>
+    </div>
+
+    <div class="boutique-full-grid">
+
+      <!-- Produit 1 -->
+      <div class="product-card fade-in" data-category="vetements" onclick="openModal('tshirt-rnv')">
+        <div class="product-img">
+          <img src="ressources/artiste cab/couverture album.jpg" alt="T-shirt Rise & Vibes" />
+          <div class="product-tag">New</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Vêtements</div>
+          <div class="product-name">T-Shirt Rise &amp; Vibes Premium</div>
+          <div class="product-price">15 000 FCFA</div>
+        </div>
+      </div>
+
+      <!-- Produit 2 -->
+      <div class="product-card fade-in fade-in-delay-1" data-category="vetements" onclick="openModal('hoodie-cab')">
+        <div class="product-img">
+          <img src="ressources/artiste cab/1.jpg" alt="Hoodie CAB" />
+          <div class="product-tag">Exclusif</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Vêtements</div>
+          <div class="product-name">Hoodie CAB "Lep Lumu Lajj"</div>
+          <div class="product-price">25 000 FCFA</div>
+        </div>
+      </div>
+
+      <!-- Produit 3 -->
+      <div class="product-card fade-in fade-in-delay-2" data-category="vetements" onclick="openModal('tshirt-chess')">
+        <div class="product-img">
+          <img src="ressources/artiste cab/3.jpg" alt="T-shirt Chess" />
+        </div>
+        <div class="product-info">
+          <div class="product-category">Vêtements</div>
+          <div class="product-name">T-Shirt "Chess Game" CAB</div>
+          <div class="product-price">15 000 FCFA</div>
+        </div>
+      </div>
+
+      <!-- Produit 4 -->
+      <div class="product-card fade-in" data-category="accessoires" onclick="openModal('cap-rnv')">
+        <div class="product-img">
+          <img src="ressources/logo/logo rouge.jpg" alt="Casquette Rise & Vibes" />
+        </div>
+        <div class="product-info">
+          <div class="product-category">Accessoires</div>
+          <div class="product-name">Casquette brodée R&amp;V</div>
+          <div class="product-price">8 000 FCFA</div>
+        </div>
+      </div>
+
+      <!-- Produit 5 -->
+      <div class="product-card fade-in fade-in-delay-1" data-category="accessoires" onclick="openModal('tote-bag')">
+        <div class="product-img">
+          <img src="ressources/artiste cab/6.jpg" alt="Tote Bag" />
+        </div>
+        <div class="product-info">
+          <div class="product-category">Accessoires</div>
+          <div class="product-name">Tote Bag Rise &amp; Vibes</div>
+          <div class="product-price">6 000 FCFA</div>
+        </div>
+      </div>
+
+      <!-- Produit 6 -->
+      <div class="product-card fade-in fade-in-delay-2" data-category="collector" onclick="openModal('poster-cab')">
+        <div class="product-img">
+          <img src="ressources/artiste cab/5.jpg" alt="Poster CAB" />
+          <div class="product-tag">Collector</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Collector</div>
+          <div class="product-name">Poster Exclusif CAB A2</div>
+          <div class="product-price">5 000 FCFA</div>
+        </div>
+      </div>
+
+      <!-- Produit 7 -->
+      <div class="product-card fade-in" data-category="collector" onclick="openModal('vinyl')">
+        <div class="product-img">
+          <img src="ressources/artiste cab/couverture album.jpg" alt="Vinyle" />
+          <div class="product-tag">Limité</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Collector</div>
+          <div class="product-name">Vinyle Numéroté — LLL</div>
+          <div class="product-price">35 000 FCFA</div>
+        </div>
+      </div>
+
+      <!-- Produit 8 -->
+      <div class="product-card fade-in fade-in-delay-1" data-category="vetements" onclick="openModal('hoodie-studio')">
+        <div class="product-img">
+          <img src="ressources/artiste cab/8.jpg" alt="Hoodie Studio" />
+        </div>
+        <div class="product-info">
+          <div class="product-category">Vêtements</div>
+          <div class="product-name">Hoodie Rise &amp; Vibes Studio</div>
+          <div class="product-price">22 000 FCFA</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="product-detail-overlay" id="product-modal" onclick="closeModalOnBg(event)">
+  <div class="product-detail-modal" style="position:relative;">
+    <span class="modal-close" onclick="closeModal()">×</span>
+    <div class="product-detail-img">
+      <img id="modal-img" src="" alt="" />
+    </div>
+    <div class="product-detail-body">
+      <div>
+        <div class="product-detail-category" id="modal-category"></div>
+        <div class="product-detail-name" id="modal-name"></div>
+        <div class="product-detail-price" id="modal-price"></div>
+        <div class="product-detail-desc" id="modal-desc"></div>
+        <div id="modal-sizes-wrap" style="display:none;">
+          <div style="font-family:var(--font-heading);font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:0.6rem;">Taille</div>
+          <div class="product-sizes">
+            <button class="size-btn active" onclick="selectSize(this)">XS</button>
+            <button class="size-btn" onclick="selectSize(this)">S</button>
+            <button class="size-btn" onclick="selectSize(this)">M</button>
+            <button class="size-btn" onclick="selectSize(this)">L</button>
+            <button class="size-btn" onclick="selectSize(this)">XL</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="product-note">
+          📦 Pour commander, contactez-nous directement via WhatsApp ou email. Livraison disponible dans tout Dakar et options d'envoi national.
+        </div>
+        <div style="display:flex;gap:0.7rem;margin-top:1rem;">
+          <a href="https://wa.me/221772894723" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;justify-content:center;font-size:0.75rem;">
+            💬 Commander via WhatsApp
+          </a>
+          <a href="mailto:riseandvibe24@gmail.com" class="btn btn-secondary" style="font-size:0.75rem;padding:0.9rem;">
+            📧
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="ressources/logo/logo principale.jpg" alt="Rise & Vibes" />
+          <span class="footer-logo-text">RISE<span>&amp;</span>VIBES</span>
+        </div>
+        <p>Studio d'enregistrement professionnel au cœur de Dakar.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#studio">Studio</a></li>
+          <li><a href="index.html#tarifs">Tarifs</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="boutique.html">Tous les produits</a></li>
+          <li><a href="boutique.html">Vêtements</a></li>
+          <li><a href="boutique.html">Accessoires</a></li>
+          <li><a href="boutique.html">Collector</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:riseandvibe24@gmail.com">riseandvibe24@gmail.com</a></li>
+          <li><a href="tel:+221772894723">+221 77 289 47 23</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Rise &amp; Vibes Studio. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+const products = {
+  'tshirt-rnv': {
+    img: 'ressources/artiste cab/couverture album.jpg',
+    category: 'Vêtements',
+    name: 'T-Shirt Rise & Vibes Premium',
+    price: '15 000 FCFA',
+    desc: 'T-shirt 100% coton premium avec le logo Rise & Vibes brodé sur la poitrine. Coupe unisexe, fit légèrement oversize. Disponible en noir mat.',
+    sizes: true
+  },
+  'hoodie-cab': {
+    img: 'ressources/artiste cab/1.jpg',
+    category: 'Vêtements · Exclusif',
+    name: 'Hoodie CAB "Lep Lumu Lajj"',
+    price: '25 000 FCFA',
+    desc: 'Hoodie édition limitée en collaboration avec CAB. Design inspiré de la pochette de l\'album "Lep Lumu Lajj". Coton molletonné lourd 380g. Édition limitée à 50 pièces numérotées.',
+    sizes: true
+  },
+  'tshirt-chess': {
+    img: 'ressources/artiste cab/3.jpg',
+    category: 'Vêtements',
+    name: 'T-Shirt "Chess Game" CAB',
+    price: '15 000 FCFA',
+    desc: 'T-shirt avec le motif échiquier iconique du projet "Lep Lumu Lajj". Impression sérigraphie sur coton lourd. Design exclusif Rise & Vibes x CAB.',
+    sizes: true
+  },
+  'cap-rnv': {
+    img: 'ressources/logo/logo rouge.jpg',
+    category: 'Accessoires',
+    name: 'Casquette brodée R&V',
+    price: '8 000 FCFA',
+    desc: 'Casquette snapback avec logo Rise & Vibes brodé en rouge. Taille unique réglable. Qualité premium.',
+    sizes: false
+  },
+  'tote-bag': {
+    img: 'ressources/artiste cab/6.jpg',
+    category: 'Accessoires',
+    name: 'Tote Bag Rise & Vibes',
+    price: '6 000 FCFA',
+    desc: 'Tote bag en coton naturel épais avec le logo Rise & Vibes imprimé. Anse longue, résistant. Idéal pour porter au quotidien.',
+    sizes: false
+  },
+  'poster-cab': {
+    img: 'ressources/artiste cab/5.jpg',
+    category: 'Collector',
+    name: 'Poster Exclusif CAB A2',
+    price: '5 000 FCFA',
+    desc: 'Poster format A2 (42x59cm) imprimé sur papier mat premium 250g. Photo exclusive de CAB, signé par l\'artiste. Numéroté au dos. Livré enroulé dans un tube carton.',
+    sizes: false
+  },
+  'vinyl': {
+    img: 'ressources/artiste cab/couverture album.jpg',
+    category: 'Collector · Édition Limitée',
+    name: 'Vinyle Numéroté — Lep Lumu Lajj',
+    price: '35 000 FCFA',
+    desc: 'Vinyle 33 tours, pressage limité à 100 exemplaires numérotés et signés par CAB. Pochette rigide double face avec artworks exclusifs. Le cadeau ultime pour un vrai fan.',
+    sizes: false
+  },
+  'hoodie-studio': {
+    img: 'ressources/artiste cab/8.jpg',
+    category: 'Vêtements',
+    name: 'Hoodie Rise & Vibes Studio',
+    price: '22 000 FCFA',
+    desc: 'Hoodie officiel Rise & Vibes Studio. "Where Sound Becomes Legacy" imprimé en dos, logo brodé sur poitrine. Molleton 350g, capuche double épaisseur.',
+    sizes: true
+  }
+};
+
+function openModal(id) {
+  const p = products[id];
+  if (!p) return;
+  document.getElementById('modal-img').src = p.img;
+  document.getElementById('modal-img').alt = p.name;
+  document.getElementById('modal-category').textContent = p.category;
+  document.getElementById('modal-name').textContent = p.name;
+  document.getElementById('modal-price').textContent = p.price;
+  document.getElementById('modal-desc').textContent = p.desc;
+  document.getElementById('modal-sizes-wrap').style.display = p.sizes ? 'block' : 'none';
+  document.getElementById('product-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('product-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOnBg(e) {
+  if (e.target === document.getElementById('product-modal')) closeModal();
+}
+
+function selectSize(btn) {
+  btn.closest('.product-sizes').querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
+</body>
+</html>

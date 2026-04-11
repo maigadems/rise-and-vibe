@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rise & Vibes Studio — Dakar</title>
+  <meta name="description" content="Rise & Vibes Studio — Studio d'enregistrement professionnel à Dakar. Recording, Mixage, Mastering, Production musicale." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-content > * {
+      animation: fadeInUp 0.75s cubic-bezier(0.16,1,0.3,1) forwards;
+      opacity: 0;
+    }
+    .hero-label        { animation-delay: 0.15s; }
+    .hero-wordmark     { animation-delay: 0.3s; }
+    .hero-studio-line  { animation-delay: 0.42s; }
+    .hero-subtitle     { animation-delay: 0.5s; }
+    .hero-actions      { animation-delay: 0.62s; }
+    .hero-countdown    { animation-delay: 0.78s; }
+  </style>
+</head>
+<body>
+
+<!-- =================== NAVIGATION =================== -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <img src="ressources/logo/logo principale.jpg" alt="Rise & Vibes" />
+    <span class="nav-logo-text">RISE<span>&</span>VIBES</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#nouveautes">Nouveautés</a></li>
+    <li><a href="#studio">Studio</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#artistes">Artistes</a></li>
+    <li><a href="#boutique">Boutique</a></li>
+    <li><a href="#contact" class="nav-cta">Réserver</a></li>
+  </ul>
+  <div class="nav-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="hero">
+  <canvas id="sphere-canvas"></canvas>
+  <div class="hero-gradient"></div>
+  <div class="hero-noise"></div>
+
+  <div class="hero-content">
+
+    <p class="hero-eyebrow">Dakar &nbsp;·&nbsp; Sénégal</p>
+
+    <h1 class="hero-wordmark" aria-label="Rise &amp; Vibes">
+      <span class="hero-wordmark-rise">RISE</span>
+      <span class="hero-wordmark-amp">&amp;</span>
+      <span class="hero-wordmark-vibes">VIBES</span>
+    </h1>
+
+    <p class="hero-tagline">Where Sound Becomes Legacy</p>
+
+    <div class="hero-actions">
+      <a href="#tarifs" class="btn btn-hero-primary">Nos tarifs</a>
+      <a href="#artistes" class="btn btn-hero-ghost">
+        Les artistes
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- Countdown flottant -->
+    <div class="hero-countdown">
+      <span class="countdown-release-label">Sortie &mdash; Lep Lumu Lajj</span>
+      <div class="countdown-items">
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-days">00</span>
+          <span class="countdown-unit">Jours</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-hours">00</span>
+          <span class="countdown-unit">Heures</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-mins">00</span>
+          <span class="countdown-unit">Min</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-secs">00</span>
+          <span class="countdown-unit">Sec</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="scroll-indicator" onclick="document.getElementById('nouveautes').scrollIntoView({behavior:'smooth'})" role="button" aria-label="Défiler vers le bas">
+    <div class="scroll-indicator-mouse">
+      <div class="scroll-indicator-wheel"></div>
+    </div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+
+<!-- =================== NOUVEAUTÉS =================== -->
+<section class="nouveautes" id="nouveautes">
+
+  <!-- Ambient cover blur -->
+  <div class="nouveautes-bg" aria-hidden="true">
+    <img src="ressources/artiste cab/couverture album.jpg" alt="" />
+  </div>
+  <div class="nouveautes-overlay" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="drop-banner">
+
+      <!-- ── LEFT : TEXT ── -->
+      <div class="drop-text fade-in">
+
+        <div class="drop-pill">
+          <span class="drop-dot"></span>
+          New Drop &nbsp;·&nbsp; 2026
+        </div>
+
+        <p class="drop-eyebrow">CAB &nbsp;&times;&nbsp; 1daBeat</p>
+
+        <h2 class="drop-title">Lep<br/>Lumu<br/>Lajj</h2>
+
+        <p class="drop-quote">
+          "Prêt pour tout ce que cela demande."
+        </p>
+        <p class="drop-desc">
+          Mixtape 10 titres, une direction artistique inspirée de l'échiquier.
+          Stratégie, patience, sacrifice — CAB impose son rythme.
+        </p>
+
+        <div class="drop-stats">
+          <div class="drop-stat">
+            <span class="drop-stat-num">10</span>
+            <span class="drop-stat-lbl">Titres</span>
+          </div>
+          <div class="drop-stat-sep"></div>
+          <div class="drop-stat">
+            <span class="drop-stat-num">1daBeat</span>
+            <span class="drop-stat-lbl">Production</span>
+          </div>
+          <div class="drop-stat-sep"></div>
+          <div class="drop-stat">
+            <span class="drop-stat-num">Dakar</span>
+            <span class="drop-stat-lbl">Origine</span>
+          </div>
+        </div>
+
+        <div class="drop-actions">
+          <a href="album.html" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Voir la tracklist
+          </a>
+          <a href="artiste-cab.html" class="btn btn-ghost-sm">Profil artiste</a>
+        </div>
+
+      </div>
+
+      <!-- ── RIGHT : COVER ── -->
+      <div class="drop-cover-wrap fade-in fade-in-delay-2">
+        <div class="drop-cover-frame" id="dropCover">
+          <img src="ressources/artiste cab/couverture album.jpg" alt="Lep Lumu Lajj — CAB" />
+          <div class="drop-cover-shine" aria-hidden="true"></div>
+        </div>
+        <div class="drop-cover-glow" aria-hidden="true"></div>
+        <div class="drop-cover-tag">
+          <span>Mixtape</span>
+          <span class="dot-sep">·</span>
+          <span>Hip-Hop</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== STUDIO =================== -->
+<section class="studio" id="studio">
+  <div class="container">
+    <div class="studio-noimg-layout">
+      <div class="fade-in">
+        <div class="section-header">
+          <div class="section-label">Notre Studio</div>
+          <h2 class="section-title">L'excellence<br/><span class="dim">sonore</span></h2>
+          <p class="section-desc">
+            Dakar. Son. Ambition. Tout ce qu'il faut pour transformer un projet en œuvre.
+          </p>
+        </div>
+      </div>
+
+      <div class="studio-stats-row fade-in fade-in-delay-1">
+        <div class="studio-stat">
+          <div class="studio-stat-number">5+</div>
+          <div class="studio-stat-label">Années d'expérience</div>
+        </div>
+        <div class="studio-stat">
+          <div class="studio-stat-number">200+</div>
+          <div class="studio-stat-label">Projets réalisés</div>
+        </div>
+        <div class="studio-stat">
+          <div class="studio-stat-number">50+</div>
+          <div class="studio-stat-label">Artistes signés</div>
+        </div>
+        <div class="studio-stat">
+          <div class="studio-stat-number">24/7</div>
+          <div class="studio-stat-label">Disponibilité</div>
+        </div>
+      </div>
+
+      <div class="fade-in fade-in-delay-2">
+
+        <div class="studio-features">
+          <div class="studio-feature">
+            <div class="studio-feature-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3M8 22h8"/></svg>
+            </div>
+            <div>
+              <h4>Cabine d'enregistrement pro</h4>
+              <p>Isolation acoustique totale, micro Neumann U87, préamplis SSL &amp; API.</p>
+            </div>
+          </div>
+          <div class="studio-feature">
+            <div class="studio-feature-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </div>
+            <div>
+              <h4>Mixage &amp; Mastering</h4>
+              <p>Console SSL, plugins Waves, référencement sur 12 systèmes d'écoute différents.</p>
+            </div>
+          </div>
+          <div class="studio-feature">
+            <div class="studio-feature-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.87v6.26a1 1 0 0 1-1.447.894L15 14v-4z"/><rect x="2" y="6" width="13" height="12" rx="2"/></svg>
+            </div>
+            <div>
+              <h4>Production visuelle</h4>
+              <p>Shooting photo, tournage clip, direction artistique complète.</p>
+            </div>
+          </div>
+          <div class="studio-feature">
+            <div class="studio-feature-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/><path d="M18 14l2 2 4-4"/></svg>
+            </div>
+            <div>
+              <h4>Label &amp; Distribution</h4>
+              <p>Distribution digitale mondiale, gestion de carrière, promo réseaux sociaux.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary mt-3">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Planifier une visite
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =================== TARIFS =================== -->
+<section class="tarifs" id="tarifs">
+  <div class="container">
+    <div class="section-header centered fade-in">
+      <div class="section-label">Tarifs</div>
+      <h2 class="section-title">Nos <span class="dim">formules</span></h2>
+      <p class="section-desc">Des offres transparentes pour chaque niveau. Tous les tarifs sont en FCFA, hors taxes.</p>
+    </div>
+
+    <div class="tarifs-grid">
+
+      <div class="tarif-card fade-in">
+        <div class="tarif-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3M8 22h8"/></svg></div>
+        <div class="tarif-name">Session Recording</div>
+        <div class="tarif-price">10 000 <span>FCFA</span></div>
+        <div class="tarif-period">Par heure · minimum 2h</div>
+        <div class="tarif-divider"></div>
+        <ul class="tarif-features">
+          <li>Cabine d'enregistrement pro</li>
+          <li>Ingénieur du son inclus</li>
+          <li>Fichiers WAV 24-bit livrés</li>
+          <li>1 revision incluse</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline-red" style="width:100%;justify-content:center;">Réserver</a>
+      </div>
+
+      <div class="tarif-card featured fade-in fade-in-delay-1">
+        <div class="tarif-badge">Populaire</div>
+        <div class="tarif-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+        <div class="tarif-name">Mix &amp; Master</div>
+        <div class="tarif-price">25 000 <span>FCFA</span></div>
+        <div class="tarif-period">Par titre · livraison 48h</div>
+        <div class="tarif-divider"></div>
+        <ul class="tarif-features">
+          <li>Mixage stéréo complet</li>
+          <li>Mastering radio-ready</li>
+          <li>Format streaming + CD</li>
+          <li>3 revisions incluses</li>
+          <li>Session de feedback incluse</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Réserver</a>
+      </div>
+
+      <div class="tarif-card fade-in fade-in-delay-2">
+        <div class="tarif-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <div class="tarif-name">Beat Production</div>
+        <div class="tarif-price">30 000 <span>FCFA</span></div>
+        <div class="tarif-period">Beat exclusif · tous droits</div>
+        <div class="tarif-divider"></div>
+        <ul class="tarif-features">
+          <li>Beat sur-mesure 100% original</li>
+          <li>Cession de droits complète</li>
+          <li>Stems séparés inclus</li>
+          <li>2 propositions musicales</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline-red" style="width:100%;justify-content:center;">Réserver</a>
+      </div>
+
+      <div class="tarif-card fade-in">
+        <div class="tarif-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div class="tarif-name">Full Day Session</div>
+        <div class="tarif-price">50 000 <span>FCFA</span></div>
+        <div class="tarif-period">8h · pause incluse</div>
+        <div class="tarif-divider"></div>
+        <ul class="tarif-features">
+          <li>8h de studio non-stop</li>
+          <li>Ingénieur dédié à la journée</li>
+          <li>Collation incluse</li>
+          <li>Fichiers masters livrés</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline-red" style="width:100%;justify-content:center;">Réserver</a>
+      </div>
+
+      <div class="tarif-card fade-in fade-in-delay-1">
+        <div class="tarif-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tarif-name">Package EP</div>
+        <div class="tarif-price">120 000 <span>FCFA</span></div>
+        <div class="tarif-period">5 titres · clé en main</div>
+        <div class="tarif-divider"></div>
+        <ul class="tarif-features">
+          <li>Enregistrement 5 titres</li>
+          <li>Mixage &amp; mastering inclus</li>
+          <li>Artwork EP (design)</li>
+          <li>Distribution digitale</li>
+          <li>Promo réseaux 1 mois</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline-red" style="width:100%;justify-content:center;">Réserver</a>
+      </div>
+
+      <div class="tarif-card fade-in fade-in-delay-2">
+        <div class="tarif-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.87v6.26a1 1 0 0 1-1.447.894L15 14v-4z"/><rect x="2" y="6" width="13" height="12" rx="2"/></svg></div>
+        <div class="tarif-name">Shooting Visuel</div>
+        <div class="tarif-price">20 000 <span>FCFA</span></div>
+        <div class="tarif-period">Demi-journée · photos + clips</div>
+        <div class="tarif-divider"></div>
+        <ul class="tarif-features">
+          <li>Photographe professionnel</li>
+          <li>30+ photos retouchées</li>
+          <li>Option clip additionnel</li>
+          <li>Direction artistique</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline-red" style="width:100%;justify-content:center;">Réserver</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== ARTISTES =================== -->
+<section class="artistes" id="artistes">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Artistes</div>
+      <h2 class="section-title">Notre <span class="dim">roster</span></h2>
+      <p class="section-desc">Les talents qui façonnent le son de Rise &amp; Vibes.</p>
+    </div>
+
+    <div class="artistes-grid">
+
+      <div class="artiste-card fade-in">
+        <img src="ressources/artiste cab/3.jpg" alt="CAB" />
+        <div class="artiste-card-overlay">
+          <div class="artiste-card-genre">Hip-Hop · Rap Conscient</div>
+          <div class="artiste-card-name">CAB</div>
+          <div class="artiste-card-project">Lep Lumu Lajj — 2026</div>
+          <div class="artiste-card-actions">
+            <a href="artiste-cab.html" class="btn btn-primary" style="font-size:0.7rem;padding:0.6rem 1.2rem;">Profil</a>
+            <a href="album.html" class="btn btn-secondary" style="font-size:0.7rem;padding:0.6rem 1.2rem;">Album</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder artiste 2 -->
+      <div class="artiste-card fade-in fade-in-delay-1" style="cursor:default;">
+        <img src="ressources/artiste cab/7.jpg" alt="Artiste" style="filter:grayscale(60%)" />
+        <div class="artiste-card-overlay" style="background:linear-gradient(to top, rgba(5,5,5,0.98) 0%, rgba(5,5,5,0.5) 60%, transparent 100%)">
+          <div class="artiste-card-genre">Afrobeat · RnB</div>
+          <div class="artiste-card-name" style="opacity:0.3">???</div>
+          <div class="artiste-card-project" style="font-size:0.8rem;color:var(--red);opacity:0.8;">Prochainement...</div>
+        </div>
+      </div>
+
+      <!-- Placeholder artiste 3 -->
+      <div class="artiste-card fade-in fade-in-delay-2" style="cursor:default;">
+        <img src="ressources/artiste cab/9.jpg" alt="Artiste" style="filter:grayscale(80%)" />
+        <div class="artiste-card-overlay" style="background:linear-gradient(to top, rgba(5,5,5,0.98) 0%, rgba(5,5,5,0.5) 60%, transparent 100%)">
+          <div class="artiste-card-genre">Trap · Drill</div>
+          <div class="artiste-card-name" style="opacity:0.3">???</div>
+          <div class="artiste-card-project" style="font-size:0.8rem;color:var(--red);opacity:0.8;">Prochainement...</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== BOUTIQUE PREVIEW =================== -->
+<section class="boutique-preview" id="boutique">
+  <div class="container">
+    <div class="section-header fade-in" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="section-label">Boutique</div>
+        <h2 class="section-title">Goodies<br/><span class="dim">officiels</span></h2>
+      </div>
+      <a href="boutique.html" class="btn btn-secondary">Voir tout</a>
+    </div>
+
+    <div class="boutique-grid">
+
+      <div class="product-card fade-in">
+        <div class="product-img">
+          <img src="ressources/artiste cab/couverture album.jpg" alt="T-shirt Rise & Vibes" />
+          <div class="product-tag">New</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Vêtements</div>
+          <div class="product-name">T-Shirt Rise &amp; Vibes Premium</div>
+          <div class="product-price">15 000 FCFA</div>
+        </div>
+      </div>
+
+      <div class="product-card fade-in fade-in-delay-1">
+        <div class="product-img">
+          <img src="ressources/artiste cab/1.jpg" alt="Hoodie CAB" />
+          <div class="product-tag">Exclusif</div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Vêtements</div>
+          <div class="product-name">Hoodie CAB "Lep Lumu Lajj"</div>
+          <div class="product-price">25 000 FCFA</div>
+        </div>
+      </div>
+
+      <div class="product-card fade-in fade-in-delay-2">
+        <div class="product-img">
+          <img src="ressources/logo/logo rouge.jpg" alt="Casquette Rise & Vibes" />
+        </div>
+        <div class="product-info">
+          <div class="product-category">Accessoires</div>
+          <div class="product-name">Casquette brodée R&amp;V</div>
+          <div class="product-price">8 000 FCFA</div>
+        </div>
+      </div>
+
+      <div class="product-card fade-in fade-in-delay-3">
+        <div class="product-img">
+          <img src="ressources/artiste cab/5.jpg" alt="Poster CAB" />
+        </div>
+        <div class="product-info">
+          <div class="product-category">Collector</div>
+          <div class="product-name">Poster Exclusif CAB A2</div>
+          <div class="product-price">5 000 FCFA</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="boutique-cta fade-in">
+      <a href="boutique.html" class="btn btn-primary">Découvrir toute la boutique</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CONTACT =================== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Travaillons<br/><span class="dim">ensemble</span></h2>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="fade-in">
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value">
+              <a href="mailto:riseandvibe24@gmail.com">riseandvibe24@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 9.75a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 .87h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16l.92.92z"/></svg></div>
+          <div>
+            <div class="contact-info-label">Appel</div>
+            <div class="contact-info-value">
+              <a href="tel:+221772894723">+221 77 289 47 23</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div>
+            <div class="contact-info-label">WhatsApp</div>
+            <div class="contact-info-value">
+              <a href="https://wa.me/221772894723" target="_blank" rel="noopener">+221 77 289 47 23</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="contact-info-label">Localisation</div>
+            <div class="contact-info-value">Dakar, Sénégal</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <div class="contact-info-label">Horaires</div>
+            <div class="contact-info-value">Lun – Sam : 9h – 23h</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in fade-in-delay-2">
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom / Artiste</label>
+              <input type="text" id="name" placeholder="Votre nom" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" placeholder="+221 7X XXX XX XX" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="votre@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="service">Service souhaité</label>
+            <select id="service">
+              <option value="" disabled selected>Choisir un service...</option>
+              <option>Session Recording (1h)</option>
+              <option>Full Day Session</option>
+              <option>Mixage &amp; Mastering</option>
+              <option>Beat Production</option>
+              <option>Package EP (5 titres)</option>
+              <option>Shooting Visuel</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Décrivez votre projet..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            Envoyer la demande
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="ressources/logo/logo principale.jpg" alt="Rise & Vibes" />
+          <span class="footer-logo-text">RISE<span>&amp;</span>VIBES</span>
+        </div>
+        <p>Studio d'enregistrement professionnel au cœur de Dakar. Nous créons l'excellence sonore depuis plus de 5 ans.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" title="Instagram" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer-social" title="YouTube" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+          <a href="#" class="footer-social" title="TikTok" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+          <a href="#" class="footer-social" title="SoundCloud" aria-label="SoundCloud">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#studio">À propos</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+          <li><a href="#contact">Réservation</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Artistes</h4>
+        <ul>
+          <li><a href="artiste-cab.html">CAB</a></li>
+          <li><a href="#artistes">Roster</a></li>
+          <li><a href="album.html">Lep Lumu Lajj</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="boutique.html">Tous les produits</a></li>
+          <li><a href="boutique.html">T-Shirts</a></li>
+          <li><a href="boutique.html">Accessoires</a></li>
+          <li><a href="boutique.html">Collector</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Rise &amp; Vibes Studio. Tous droits réservés.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/sphere.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

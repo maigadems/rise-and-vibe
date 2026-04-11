@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lep Lumu Lajj — CAB | Rise & Vibes Studio</title>
+  <meta name="description" content="Lep Lumu Lajj — La nouvelle mixtape de CAB. Tracklist complète, prod. 1daBeat." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    .track-item:hover .track-num::before {
+      content: '▶';
+      display: inline;
+    }
+    .track-item:hover .track-num-val {
+      display: none;
+    }
+
+    .chess-motif {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 8rem;
+      opacity: 0.04;
+      pointer-events: none;
+      letter-spacing: -1rem;
+    }
+
+    .streaming-links {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .streaming-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 0.55rem 1.1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--white);
+      background: transparent;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .streaming-btn:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .album-credits {
+      background: var(--black-2);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 4px;
+      padding: 2rem;
+    }
+
+    .credit-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .credit-item:last-child { border-bottom: none; }
+
+    .credit-role {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .credit-name {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <img src="ressources/logo/logo principale.jpg" alt="Rise & Vibes" />
+    <span class="nav-logo-text">RISE<span>&</span>VIBES</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#nouveautes">Nouveautés</a></li>
+    <li><a href="index.html#studio">Studio</a></li>
+    <li><a href="index.html#tarifs">Tarifs</a></li>
+    <li><a href="index.html#artistes">Artistes</a></li>
+    <li><a href="boutique.html">Boutique</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Réserver</a></li>
+  </ul>
+  <div class="nav-toggle">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ALBUM HERO -->
+<section class="album-hero">
+  <div class="container" style="position:relative;">
+    <div class="chess-motif">♟♟♟</div>
+    <div class="album-hero-grid fade-in">
+
+      <div class="album-cover-3d">
+        <img src="ressources/artiste cab/couverture album.jpg" alt="Lep Lumu Lajj" />
+      </div>
+
+      <div>
+        <div class="album-hero-tags">
+          <span class="album-tag red">Mixtape</span>
+          <span class="album-tag gold">2026</span>
+          <span class="album-tag gray">Hip-Hop</span>
+          <span class="album-tag gray">10 Titres</span>
+        </div>
+
+        <h1 class="album-title">Lep<br/>Lumu<br/>Lajj</h1>
+        <div class="album-artist">
+          par <a href="artiste-cab.html">CAB</a>
+        </div>
+
+        <p class="album-desc">
+          "Prêt pour tout ce que cela demande." À travers une direction artistique inspirée de l'échiquier,
+          CAB se présente comme un joueur dans un jeu où chaque mouvement est décisif. Entre stratégie,
+          patience et sacrifice — il impose son rythme.
+        </p>
+
+        <div class="album-details">
+          <div class="album-detail">
+            <span class="album-detail-label">Artiste</span>
+            <span class="album-detail-value">CAB</span>
+          </div>
+          <div class="album-detail">
+            <span class="album-detail-label">Beatmaker</span>
+            <span class="album-detail-value">1daBeat</span>
+          </div>
+          <div class="album-detail">
+            <span class="album-detail-label">Titres</span>
+            <span class="album-detail-value">10</span>
+          </div>
+          <div class="album-detail">
+            <span class="album-detail-label">Studio</span>
+            <span class="album-detail-value">Rise &amp; Vibes</span>
+          </div>
+        </div>
+
+        <div class="streaming-links">
+          <div class="streaming-btn">🎵 Spotify</div>
+          <div class="streaming-btn">▶️ YouTube Music</div>
+          <div class="streaming-btn">🍎 Apple Music</div>
+          <div class="streaming-btn">☁️ SoundCloud</div>
+          <div class="streaming-btn">📱 AudioMack</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRACKLIST -->
+<section class="tracklist-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Tracklist</div>
+      <h2 class="section-title">Les <span class="dim">10 mouvements</span></h2>
+    </div>
+
+    <div class="tracklist fade-in">
+      <div class="tracklist-header">
+        <span>#</span>
+        <span>Titre</span>
+        <span>Production</span>
+        <span style="text-align:right;">Durée</span>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">01</span></div>
+        <div class="track-info">
+          <div class="track-name">Le Plateau</div>
+          <div class="track-feat">Intro</div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">1:42</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">02</span></div>
+        <div class="track-info">
+          <div class="track-name">Premier Mouvement</div>
+          <div class="track-feat"></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">3:18</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">03</span></div>
+        <div class="track-info">
+          <div class="track-name">Sacrifice</div>
+          <div class="track-feat"></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">2:54</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">04</span></div>
+        <div class="track-info">
+          <div class="track-name">Keur Mbaye Fall</div>
+          <div class="track-feat">Ode à la banlieue</div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">3:37</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">05</span></div>
+        <div class="track-info">
+          <div class="track-name">Roi des Rues</div>
+          <div class="track-feat"></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">3:02</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">06</span></div>
+        <div class="track-info">
+          <div class="track-name">Les Règles du Jeu</div>
+          <div class="track-feat">feat. 1daBeat</div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">3:25</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">07</span></div>
+        <div class="track-info">
+          <div class="track-name">Patience</div>
+          <div class="track-feat"></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">2:48</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">08</span></div>
+        <div class="track-info">
+          <div class="track-name">Stratège</div>
+          <div class="track-feat"></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">3:11</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">09</span></div>
+        <div class="track-info">
+          <div class="track-name">Dernier Coup</div>
+          <div class="track-feat"></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">2:59</div>
+      </div>
+
+      <div class="track-item" style="background:rgba(232,0,28,0.03);">
+        <div class="track-num" style="color:var(--red);"><span class="track-num-val">10</span></div>
+        <div class="track-info">
+          <div class="track-name" style="color:var(--red);">Lep Lumu Lajj</div>
+          <div class="track-feat">Title Track</div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">4:06</div>
+      </div>
+
+    </div>
+
+    <!-- Credits -->
+    <div class="mt-4 fade-in">
+      <div class="section-header">
+        <div class="section-label">Crédits</div>
+      </div>
+      <div class="album-credits">
+        <div class="credit-item">
+          <span class="credit-role">Artiste</span>
+          <span class="credit-name">CAB (Cheikh Ahmadou Bamba Diop)</span>
+        </div>
+        <div class="credit-item">
+          <span class="credit-role">Beatmaker / Production</span>
+          <span class="credit-name">1daBeat</span>
+        </div>
+        <div class="credit-item">
+          <span class="credit-role">Enregistrement</span>
+          <span class="credit-name">Rise &amp; Vibes Studio, Dakar</span>
+        </div>
+        <div class="credit-item">
+          <span class="credit-role">Mixage &amp; Mastering</span>
+          <span class="credit-name">Rise &amp; Vibes Studio</span>
+        </div>
+        <div class="credit-item">
+          <span class="credit-role">Direction Artistique</span>
+          <span class="credit-name">CAB</span>
+        </div>
+        <div class="credit-item">
+          <span class="credit-role">Photographie</span>
+          <span class="credit-name">Rise &amp; Vibes Visuals</span>
+        </div>
+        <div class="credit-item">
+          <span class="credit-role">Distribution</span>
+          <span class="credit-name">Rise &amp; Vibes Studio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-4 fade-in">
+      <a href="artiste-cab.html" class="btn btn-primary" style="margin-right:1rem;">Profil CAB</a>
+      <a href="boutique.html" class="btn btn-secondary">Boutique officielle</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="ressources/logo/logo principale.jpg" alt="Rise & Vibes" />
+          <span class="footer-logo-text">RISE<span>&amp;</span>VIBES</span>
+        </div>
+        <p>Studio d'enregistrement professionnel au cœur de Dakar.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#studio">Studio</a></li>
+          <li><a href="index.html#tarifs">Tarifs</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Artiste</h4>
+        <ul>
+          <li><a href="artiste-cab.html">CAB</a></li>
+          <li><a href="album.html">Lep Lumu Lajj</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:riseandvibe24@gmail.com">riseandvibe24@gmail.com</a></li>
+          <li><a href="tel:+221772894723">+221 77 289 47 23</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Rise &amp; Vibes Studio. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
