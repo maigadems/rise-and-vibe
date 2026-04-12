@@ -311,26 +311,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }, { passive: true });
 })();
 
-// ============================================
-// TARIFS — wrapper scroll horizontal sur mobile
-// ============================================
-(function () {
-  if (window.innerWidth > 768) return;
-
-  const grid = document.querySelector('.tarifs-grid');
-  if (!grid) return;
-
-  const wrap = document.createElement('div');
-  wrap.className = 'tarifs-scroll-wrap';
-
-  const hint = document.createElement('div');
-  hint.className = 'tarifs-scroll-hint';
-  hint.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg> Glisse pour voir plus';
-
-  grid.parentNode.insertBefore(hint, grid);
-  grid.parentNode.insertBefore(wrap, grid);
-  wrap.appendChild(grid);
-})();
 
 // ============================================
 // ACTIVE NAV LINK on scroll

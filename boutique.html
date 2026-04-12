@@ -7,7 +7,7 @@
   <meta name="description" content="Boutique officielle Rise & Vibes — T-shirts, Hoodies, Casquettes, Posters et goodies exclusifs." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(16px); }
@@ -64,8 +64,15 @@
       max-height: 90vh;
     }
 
-    @media (max-width: 600px) {
-      .product-detail-modal { grid-template-columns: 1fr; }
+    @media (max-width: 768px) {
+      .product-detail-overlay { padding: 0; align-items: flex-end; }
+      .product-detail-modal {
+        grid-template-columns: 1fr;
+        max-height: 92vh;
+        border-radius: 12px 12px 0 0;
+        overflow-y: auto;
+      }
+      .product-detail-img { aspect-ratio: 4/3; max-height: 220px; }
     }
 
     .product-detail-img {

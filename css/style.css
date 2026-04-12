@@ -43,6 +43,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -1291,6 +1292,13 @@ section {
   position: relative;
   overflow: hidden;
   cursor: default;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bouton toujours collé en bas de la card */
+.tarif-card .btn {
+  margin-top: auto;
 }
 
 .tarif-card::before {
@@ -2536,11 +2544,14 @@ section {
   /* Container */
   .container {
     padding: 0 1.2rem;
+    max-width: 100%;
   }
 
   /* Sections */
   section {
     padding: 4rem 0;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   /* Navigation */
@@ -2719,6 +2730,10 @@ section {
   .drop-stats { flex-wrap: wrap; gap: 1rem; }
   .drop-stat-sep { display: none; }
   .drop-eyebrow { font-size: 0.7rem; }
+
+  /* Tarifs — 1 col sur très petit écran */
+  .tarifs-grid { grid-template-columns: 1fr; }
+  .tarif-card   { padding: 1.1rem; }
 
   /* Studio stats */
   .studio-stats-row { grid-template-columns: 1fr 1fr; }
@@ -2929,45 +2944,23 @@ section {
   }
   .studio-stat { padding: 1.4rem 1rem; }
 
-  /* ── Tarifs — scroll horizontal ── */
-  .tarifs-scroll-wrap {
-    overflow-x: auto;
-    margin: 0 -1.2rem;
-    padding: 0 1.2rem 1rem;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .tarifs-scroll-wrap::-webkit-scrollbar { display: none; }
-
+  /* ── Tarifs — 2 colonnes sur mobile ── */
   .tarifs-grid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    width: max-content;
-    padding-bottom: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
   }
 
   .tarif-card {
-    flex-shrink: 0;
-    width: 260px;
-    scroll-snap-align: start;
+    padding: 1.2rem;
+    border-radius: 6px;
   }
 
-  /* Indicateur scroll */
-  .tarifs-scroll-hint {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-body);
-    font-size: 0.62rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.25);
-    margin-bottom: 1.2rem;
-  }
-  .tarifs-scroll-hint svg { flex-shrink: 0; }
+  .tarif-name  { font-size: 0.75rem; }
+  .tarif-price { font-size: 1.4rem; }
+  .tarif-features { font-size: 0.78rem; }
+  .tarif-features li { padding: 0.3rem 0; }
+  .tarif-badge { font-size: 0.55rem; padding: 0.25rem 0.6rem; }
+  .tarif-icon  { width: 34px; height: 34px; }
 
   /* ── Artistes — stack 1 col ── */
   .artistes-grid { grid-template-columns: 1fr; gap: 1rem; }
@@ -3007,46 +3000,69 @@ section {
   .page-hero {
     min-height: 65vh !important;
     max-height: 70vh;
+    overflow-x: hidden;
+    width: 100%;
   }
   .page-hero-content {
     padding: 1.5rem 1.2rem 2rem;
   }
 
   .artiste-hero-label {
-    font-size: 0.58rem;
-    letter-spacing: 2.5px;
+    font-size: 0.56rem;
+    letter-spacing: 1.5px;
     margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
   .artiste-hero-name {
-    font-size: clamp(3rem, 14vw, 5rem);
-    letter-spacing: 3px;
-    margin-bottom: 0.8rem;
+    font-size: clamp(2.8rem, 14vw, 5rem);
+    letter-spacing: 2px;
+    margin-bottom: 0.7rem;
   }
   .artiste-hero-meta {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.4rem;
+    gap: 0.35rem;
     flex-wrap: nowrap;
+    max-width: 100%;
   }
   .artiste-hero-meta-item {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     max-width: calc(100vw - 2.4rem);
-    white-space: normal;
-    word-break: break-word;
   }
 
-  .artiste-content { padding: 2.5rem 0; }
+  .artiste-content { padding: 2.5rem 0; overflow-x: hidden; }
   .artiste-layout {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  /* ── Empêche le blowout flex sur mobile ── */
+  .artiste-layout > * {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   .artiste-sidebar {
     position: static;
     top: auto;
+    overflow-x: hidden;
   }
-  .artiste-bio { font-size: 0.88rem; line-height: 1.8; }
+  .artiste-bio {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
   .artiste-bio p + p { margin-top: 0.9rem; }
   .artiste-support-card { padding: 1.3rem; }
   .support-amounts { gap: 0.5rem; }
