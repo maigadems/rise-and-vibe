@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lep Lumu Lajj — CAB | Rise & Vibes Studio</title>
-  <meta name="description" content="Lep Lumu Lajj — La nouvelle mixtape de CAB. Tracklist complète, prod. 1daBeat." />
+  <title>Lep Lumu Lajj â€” CAB | Rise & Vibes Studio</title>
+  <meta name="description" content="Lep Lumu Lajj â€” La nouvelle mixtape de CAB. Tracklist complÃ¨te, prod. 1daBeat." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     .track-item:hover .track-num::before {
-      content: '▶';
+      content: 'â–¶';
       display: inline;
     }
     .track-item:hover .track-num-val {
@@ -88,6 +88,37 @@
       font-weight: 600;
       color: var(--white);
     }
+
+    .track-info .track-feat {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.45rem;
+      padding: 0.28rem 0.7rem;
+      border: 1px solid rgba(232, 0, 28, 0.28);
+      border-radius: 999px;
+      background: rgba(232, 0, 28, 0.08);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .track-feat:empty {
+      display: none;
+    }
+
+    .track-feat .feat-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.64rem;
+    }
+
+    .track-feat .feat-artist {
+      color: var(--red);
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
@@ -99,12 +130,12 @@
     <span class="nav-logo-text">RISE<span>&</span>VIBES</span>
   </div>
   <ul class="nav-links">
-    <li><a href="index.html#nouveautes">Nouveautés</a></li>
+    <li><a href="index.html#nouveautes">NouveautÃ©s</a></li>
     <li><a href="index.html#studio">Studio</a></li>
     <li><a href="index.html#tarifs">Tarifs</a></li>
     <li><a href="index.html#artistes">Artistes</a></li>
     <li><a href="boutique.html">Boutique</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Réserver</a></li>
+    <li><a href="index.html#contact" class="nav-cta">RÃ©server</a></li>
   </ul>
   <div class="nav-toggle">
     <span></span><span></span><span></span>
@@ -114,7 +145,7 @@
 <!-- ALBUM HERO -->
 <section class="album-hero">
   <div class="container" style="position:relative;">
-    <div class="chess-motif">♟♟♟</div>
+    <div class="chess-motif">â™Ÿâ™Ÿâ™Ÿ</div>
     <div class="album-hero-grid fade-in">
 
       <div class="album-cover-3d">
@@ -126,7 +157,7 @@
           <span class="album-tag red">Mixtape</span>
           <span class="album-tag gold">2026</span>
           <span class="album-tag gray">Hip-Hop</span>
-          <span class="album-tag gray">10 Titres</span>
+          <span class="album-tag gray">20 Titres</span>
         </div>
 
         <h1 class="album-title">Lep<br/>Lumu<br/>Lajj</h1>
@@ -135,9 +166,9 @@
         </div>
 
         <p class="album-desc">
-          "Prêt pour tout ce que cela demande." À travers une direction artistique inspirée de l'échiquier,
-          CAB se présente comme un joueur dans un jeu où chaque mouvement est décisif. Entre stratégie,
-          patience et sacrifice — il impose son rythme.
+          "PrÃªt pour tout ce que cela demande." Ã€ travers une direction artistique inspirÃ©e de l'Ã©chiquier,
+          CAB se prÃ©sente comme un joueur dans un jeu oÃ¹ chaque mouvement est dÃ©cisif. Entre stratÃ©gie,
+          patience et sacrifice â€” il impose son rythme.
         </p>
 
         <div class="album-details">
@@ -151,7 +182,7 @@
           </div>
           <div class="album-detail">
             <span class="album-detail-label">Titres</span>
-            <span class="album-detail-value">10</span>
+            <span class="album-detail-value">20</span>
           </div>
           <div class="album-detail">
             <span class="album-detail-label">Studio</span>
@@ -160,11 +191,11 @@
         </div>
 
         <div class="streaming-links">
-          <div class="streaming-btn">🎵 Spotify</div>
-          <div class="streaming-btn">▶️ YouTube Music</div>
-          <div class="streaming-btn">🍎 Apple Music</div>
-          <div class="streaming-btn">☁️ SoundCloud</div>
-          <div class="streaming-btn">📱 AudioMack</div>
+          <div class="streaming-btn">ðŸŽµ Spotify</div>
+          <div class="streaming-btn">â–¶ï¸ YouTube Music</div>
+          <div class="streaming-btn">ðŸŽ Apple Music</div>
+          <div class="streaming-btn">â˜ï¸ SoundCloud</div>
+          <div class="streaming-btn">ðŸ“± AudioMack</div>
         </div>
       </div>
 
@@ -177,7 +208,7 @@
   <div class="container">
     <div class="section-header fade-in">
       <div class="section-label">Tracklist</div>
-      <h2 class="section-title">Les <span class="dim">10 mouvements</span></h2>
+      <h2 class="section-title">Les <span class="dim">20 titres</span></h2>
     </div>
 
     <div class="tracklist fade-in">
@@ -185,107 +216,207 @@
         <span>#</span>
         <span>Titre</span>
         <span>Production</span>
-        <span style="text-align:right;">Durée</span>
+        <span style="text-align:right;">DurÃ©e</span>
       </div>
 
       <div class="track-item">
         <div class="track-num"><span class="track-num-val">01</span></div>
         <div class="track-info">
-          <div class="track-name">Le Plateau</div>
-          <div class="track-feat">Intro</div>
+          <div class="track-name">JOOW</div>
+          <div class="track-feat"></div>
         </div>
         <div class="track-producer">1daBeat</div>
-        <div class="track-duration">1:42</div>
+        <div class="track-duration">--:--</div>
       </div>
 
       <div class="track-item">
         <div class="track-num"><span class="track-num-val">02</span></div>
         <div class="track-info">
-          <div class="track-name">Premier Mouvement</div>
+          <div class="track-name">DOU DARA CI MANE</div>
           <div class="track-feat"></div>
         </div>
         <div class="track-producer">1daBeat</div>
-        <div class="track-duration">3:18</div>
+        <div class="track-duration">--:--</div>
       </div>
 
       <div class="track-item">
         <div class="track-num"><span class="track-num-val">03</span></div>
         <div class="track-info">
-          <div class="track-name">Sacrifice</div>
-          <div class="track-feat"></div>
+          <div class="track-name">TOKFA DI LOKH</div>
+          <div class="track-feat"><span class="feat-label">feat.</span><span class="feat-artist">Dip Doundou Guiss</span></div>
         </div>
         <div class="track-producer">1daBeat</div>
-        <div class="track-duration">2:54</div>
+        <div class="track-duration">--:--</div>
       </div>
 
       <div class="track-item">
         <div class="track-num"><span class="track-num-val">04</span></div>
         <div class="track-info">
-          <div class="track-name">Keur Mbaye Fall</div>
-          <div class="track-feat">Ode à la banlieue</div>
+          <div class="track-name">LEPP LUMU LAJJ</div>
+          <div class="track-feat"></div>
         </div>
         <div class="track-producer">1daBeat</div>
-        <div class="track-duration">3:37</div>
+        <div class="track-duration">--:--</div>
       </div>
 
       <div class="track-item">
         <div class="track-num"><span class="track-num-val">05</span></div>
         <div class="track-info">
-          <div class="track-name">Roi des Rues</div>
+          <div class="track-name">BILLETS</div>
           <div class="track-feat"></div>
         </div>
         <div class="track-producer">1daBeat</div>
-        <div class="track-duration">3:02</div>
+        <div class="track-duration">--:--</div>
       </div>
 
       <div class="track-item">
         <div class="track-num"><span class="track-num-val">06</span></div>
         <div class="track-info">
-          <div class="track-name">Les Règles du Jeu</div>
-          <div class="track-feat">feat. 1daBeat</div>
+          <div class="track-name">DEFMA NIMA YALLA DEF</div>
+          <div class="track-feat"></div>
         </div>
         <div class="track-producer">1daBeat</div>
-        <div class="track-duration">3:25</div>
+        <div class="track-duration">--:--</div>
       </div>
 
       <div class="track-item">
         <div class="track-num"><span class="track-num-val">07</span></div>
         <div class="track-info">
-          <div class="track-name">Patience</div>
-          <div class="track-feat"></div>
+          <div class="track-name">HUMBLE</div>
+          <div class="track-feat"><span class="feat-label">feat.</span><span class="feat-artist">Papeush</span></div>
         </div>
         <div class="track-producer">1daBeat</div>
-        <div class="track-duration">2:48</div>
+        <div class="track-duration">--:--</div>
       </div>
 
       <div class="track-item">
         <div class="track-num"><span class="track-num-val">08</span></div>
         <div class="track-info">
-          <div class="track-name">Stratège</div>
+          <div class="track-name">LAMINE YAMAL</div>
           <div class="track-feat"></div>
         </div>
         <div class="track-producer">1daBeat</div>
-        <div class="track-duration">3:11</div>
+        <div class="track-duration">--:--</div>
       </div>
 
       <div class="track-item">
         <div class="track-num"><span class="track-num-val">09</span></div>
         <div class="track-info">
-          <div class="track-name">Dernier Coup</div>
+          <div class="track-name">LOLOY JEU BI</div>
+          <div class="track-feat"><span class="feat-label">feat.</span><span class="feat-artist">Elzo Jamdong</span></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">--:--</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">10</span></div>
+        <div class="track-info">
+          <div class="track-name">SANS REGRET</div>
           <div class="track-feat"></div>
         </div>
         <div class="track-producer">1daBeat</div>
-        <div class="track-duration">2:59</div>
+        <div class="track-duration">--:--</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">11</span></div>
+        <div class="track-info">
+          <div class="track-name">ENERGY / TALAL SA BOPP</div>
+          <div class="track-feat"><span class="feat-label">feat.</span><span class="feat-artist">One Lyrical</span></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">--:--</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">12</span></div>
+        <div class="track-info">
+          <div class="track-name">REAL BADMAN</div>
+          <div class="track-feat"></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">--:--</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">13</span></div>
+        <div class="track-info">
+          <div class="track-name">DIAMOND</div>
+          <div class="track-feat"><span class="feat-label">feat.</span><span class="feat-artist">Akbess</span></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">--:--</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">14</span></div>
+        <div class="track-info">
+          <div class="track-name">DEM NGA BAYIMA</div>
+          <div class="track-feat"></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">--:--</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">15</span></div>
+        <div class="track-info">
+          <div class="track-name">FIRE</div>
+          <div class="track-feat"><span class="feat-label">feat.</span><span class="feat-artist">Ngoné</span></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">--:--</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">16</span></div>
+        <div class="track-info">
+          <div class="track-name">MAGG NA</div>
+          <div class="track-feat"></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">--:--</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">17</span></div>
+        <div class="track-info">
+          <div class="track-name">MY BOY</div>
+          <div class="track-feat"><span class="feat-label">feat.</span><span class="feat-artist">Skey - Zo Killeuh - Wanepinzip</span></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">--:--</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">18</span></div>
+        <div class="track-info">
+          <div class="track-name">YALLA DOU JOUM</div>
+          <div class="track-feat"></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">--:--</div>
+      </div>
+
+      <div class="track-item">
+        <div class="track-num"><span class="track-num-val">19</span></div>
+        <div class="track-info">
+          <div class="track-name">RICARDO KAKA</div>
+          <div class="track-feat"><span class="feat-label">feat.</span><span class="feat-artist">Ashs The Best</span></div>
+        </div>
+        <div class="track-producer">1daBeat</div>
+        <div class="track-duration">--:--</div>
       </div>
 
       <div class="track-item" style="background:rgba(232,0,28,0.03);">
-        <div class="track-num" style="color:var(--red);"><span class="track-num-val">10</span></div>
+        <div class="track-num" style="color:var(--red);"><span class="track-num-val">20</span></div>
         <div class="track-info">
-          <div class="track-name" style="color:var(--red);">Lep Lumu Lajj</div>
-          <div class="track-feat">Title Track</div>
+          <div class="track-name" style="color:var(--red);">OUTRO</div>
+          <div class="track-feat"></div>
         </div>
         <div class="track-producer">1daBeat</div>
-        <div class="track-duration">4:06</div>
+        <div class="track-duration">--:--</div>
       </div>
 
     </div>
@@ -293,7 +424,7 @@
     <!-- Credits -->
     <div class="mt-4 fade-in">
       <div class="section-header">
-        <div class="section-label">Crédits</div>
+        <div class="section-label">CrÃ©dits</div>
       </div>
       <div class="album-credits">
         <div class="credit-item">
@@ -345,7 +476,7 @@
           <img src="ressources/logo/logo principale.jpg" alt="Rise & Vibes" />
           <span class="footer-logo-text">RISE<span>&amp;</span>VIBES</span>
         </div>
-        <p>Studio d'enregistrement professionnel au cœur de Dakar.</p>
+        <p>Studio d'enregistrement professionnel au cÅ“ur de Dakar.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -372,7 +503,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Rise &amp; Vibes Studio. Tous droits réservés.</p>
+      <p>Â© 2026 Rise &amp; Vibes Studio. Tous droits rÃ©servÃ©s.</p>
     </div>
   </div>
 </footer>

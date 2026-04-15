@@ -227,31 +227,40 @@ img {
 /* ============================================
    HERO SECTION
    ============================================ */
+/* ============================================
+   HERO — Studio Noir
+   ============================================ */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: var(--black);
+  /* Image de fond */
+  background-image: url('../ressources/heroback.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-#sphere-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
+#sphere-canvas { display: none; }
 
 .hero-gradient {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 70% at 50% 50%, transparent 55%, rgba(5,5,5,0.45) 100%),
-    radial-gradient(ellipse 30% 50% at 20% 80%, rgba(232,0,28,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 30% 50% at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    /* Assombrir les bords pour faire respirer le contenu */
+    radial-gradient(ellipse 90% 80% at 50% 50%, rgba(5,5,5,0.18) 18%, rgba(5,5,5,0.82) 100%),
+    /* Couverture générale pour la lisibilité du texte */
+    linear-gradient(180deg,
+      rgba(5,5,5,0.74) 0%,
+      rgba(5,5,5,0.5) 25%,
+      rgba(5,5,5,0.52) 75%,
+      rgba(5,5,5,0.84)  100%
+    );
   z-index: 1;
   pointer-events: none;
 }
@@ -259,212 +268,264 @@ img {
 .hero-noise {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
   z-index: 1;
   pointer-events: none;
 }
 
+/* ─── HERO CONTENT ─── */
 .hero-content {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 0 1.5rem;
-  max-width: 900px;
+  padding: 0 2rem;
+  width: 100%;
+  max-width: 560px;
+  gap: 2.5rem;
 }
 
-/* ─── HERO EYEBROW ─── */
-.hero-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 300;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
-  margin-bottom: 2.5rem;
+/* ─── HERO LOGO ─── */
+.hero-logo {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  justify-content: center;
 }
 
-/* ─── HERO WORDMARK ─── */
 .hero-wordmark {
+  width: min(100%, 500px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.04em;
-  margin-bottom: 1.6rem;
-  line-height: 1;
+  text-align: center;
+  gap: 0.15rem;
+  filter: drop-shadow(0 2px 40px rgba(255,255,255,0.08));
 }
 
-.hero-wordmark-rise {
-  font-family: var(--font-display);
-  font-size: clamp(5rem, 14vw, 11rem);
-  /* outline — transparent avec contour */
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(242, 242, 242, 0.75);
-  letter-spacing: 0.06em;
-  line-height: 0.9;
-}
-
-.hero-wordmark-amp {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 10vw, 8rem);
-  color: var(--red);
-  line-height: 0.9;
-  margin: 0 0.06em;
-  animation: amp-glow 4s ease-in-out infinite;
-}
-
-@keyframes amp-glow {
-  0%, 100% { text-shadow: 0 0 20px rgba(232,0,28,0.2); }
-  50%       { text-shadow: 0 0 50px rgba(232,0,28,0.45), 0 0 80px rgba(232,0,28,0.15); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.5; transform: scale(0.85); }
-}
-
-.hero-wordmark-vibes {
-  font-family: var(--font-display);
-  font-size: clamp(5rem, 14vw, 11rem);
-  /* plein — blanc solide */
-  color: var(--white);
-  letter-spacing: 0.06em;
-  line-height: 0.9;
-}
-
-/* ─── TAGLINE ─── */
-.hero-tagline {
-  font-family: var(--font-body);
-  font-size: clamp(0.75rem, 1.6vw, 0.88rem);
-  font-weight: 300;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
-  margin-bottom: 3rem;
-}
-
-/* ─── HERO ACTIONS ─── */
-.hero-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 4rem;
-}
-
-/* Bouton pill primaire */
-.btn-hero-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 0.9rem 2.4rem;
-  border-radius: 100px;
-  background: var(--red);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), transform 0.15s var(--ease-out);
+.hero-emblem {
+  width: clamp(148px, 18vw, 210px);
+  height: clamp(148px, 18vw, 210px);
+  display: block;
   position: relative;
-  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 1.15rem;
+  opacity: 0.96;
+  background:
+    radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 38%, rgba(255,255,255,0) 68%),
+    linear-gradient(90deg, transparent 48.5%, rgba(255,255,255,0.18) 50%, transparent 51.5%),
+    linear-gradient(0deg, transparent 48.5%, rgba(255,255,255,0.14) 50%, transparent 51.5%);
+  border: 1.8px solid rgba(255,255,255,0.52);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.06),
+    0 0 42px rgba(255,255,255,0.12);
+  animation: heroEmblemFloat 6.5s ease-in-out infinite;
 }
 
-.btn-hero-primary::after {
+.hero-emblem::before {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 100px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+  inset: 8% 4%;
+  border-radius: 50%;
+  border: 1.6px solid rgba(255,255,255,0.4);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(24deg) scaleY(0.68);
+}
+
+.hero-emblem::after {
+  content: '';
+  position: absolute;
+  inset: 18% 9%;
+  border-radius: 50%;
+  border: 1.6px solid rgba(255,255,255,0.34);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(-22deg) scaleX(0.72);
+}
+
+@keyframes heroEmblemFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-16deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-12deg);
+  }
+}
+
+.hero-word {
+  display: block;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 0.88;
+  color: var(--white);
+}
+
+.hero-word-top,
+.hero-word-bottom {
+  font-size: clamp(4.8rem, 12vw, 7.3rem);
+  letter-spacing: 0.24em;
+  padding-left: 0.24em;
+}
+
+.hero-word-and {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.9rem, 4.4vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: 0.42em;
+  padding-left: 0.42em;
+  padding-inline: 1.4em 1em;
+  color: var(--red);
+  text-shadow:
+    0 0 10px rgba(232, 0, 28, 0.35),
+    0 0 22px rgba(232, 0, 28, 0.18);
+  isolation: isolate;
+}
+
+.hero-word-and span {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-word-and::marker {
+  content: '';
+}
+
+.hero-word-and::before,
+.hero-word-and::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: clamp(60px, 9vw, 96px);
+  height: 2px;
+  transform: translateY(-50%);
+  border-radius: 999px;
   pointer-events: none;
 }
 
-.btn-hero-primary:hover {
-  background: var(--red-dark);
-  box-shadow: 0 8px 30px rgba(232,0,28,0.4);
-  transform: translateY(-2px);
+.hero-word-and::before {
+  right: 100%;
+  margin-right: 0.7em;
+  background: linear-gradient(90deg,
+    rgba(232, 0, 28, 0),
+    rgba(232, 0, 28, 0.18) 30%,
+    rgba(232, 0, 28, 0.95) 100%);
+  box-shadow: 0 0 14px rgba(232, 0, 28, 0.28);
 }
 
-.btn-hero-primary:active {
-  transform: scale(0.97);
+.hero-word-and::after {
+  left: 100%;
+  margin-left: 0.45em;
+  background: linear-gradient(90deg,
+    rgba(232, 0, 28, 0.95) 0%,
+    rgba(232, 0, 28, 0.18) 70%,
+    rgba(232, 0, 28, 0) 100%);
+  box-shadow: 0 0 14px rgba(232, 0, 28, 0.28);
 }
 
-/* Bouton ghost transparent */
-.btn-hero-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 0.9rem 2rem;
-  border-radius: 100px;
-  background: transparent;
-  color: rgba(242, 242, 242, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  cursor: pointer;
-  transition: color 0.2s var(--ease-out), border-color 0.2s var(--ease-out), background 0.2s var(--ease-out), transform 0.15s var(--ease-out);
+.hero-word-and-glow {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 150%;
+  height: 240%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at center,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.38) 24%,
+      rgba(255, 255, 255, 0.1) 48%,
+      rgba(255, 255, 255, 0) 72%);
+  filter: blur(10px);
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+  animation: andShimmer 2.8s ease-in-out infinite;
 }
 
-.btn-hero-ghost:hover {
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-2px);
+@keyframes andShimmer {
+  0%, 100% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
 }
 
-.btn-hero-ghost:active {
-  transform: scale(0.97);
+.hero-word-bottom {
+  letter-spacing: 0.18em;
+  padding-left: 0.18em;
 }
 
-/* ─── COUNTDOWN flottant ─── */
+.hero-logo svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 40px rgba(255,255,255,0.08));
+}
+
+/* ─── COUNTDOWN ─── */
 .hero-countdown {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.7rem;
+  gap: 1rem;
+  width: 100%;
 }
 
 .countdown-release-label {
   font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 400;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255,255,255,0.22);
 }
 
 .countdown-items {
   display: flex;
-  align-items: center;
-  gap: 0.2rem;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 6px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .countdown-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 56px;
+  padding: 0.75rem 1.3rem;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  min-width: 68px;
 }
+
+.countdown-item:last-child { border-right: none; }
 
 .countdown-sep {
   font-family: var(--font-display);
-  font-size: 1.8rem;
-  color: rgba(255,255,255,0.12);
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.1);
   line-height: 1;
-  margin-bottom: 0.8rem;
+  padding: 0.75rem 0;
   align-self: flex-start;
-  padding-top: 0.1rem;
 }
 
 .countdown-number {
   font-family: var(--font-display);
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1;
   color: var(--white);
   letter-spacing: 2px;
@@ -473,18 +534,16 @@ img {
 
 .countdown-unit {
   font-family: var(--font-body);
-  font-size: 0.5rem;
+  font-size: 0.48rem;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.25);
-  margin-top: 4px;
+  color: rgba(255,255,255,0.22);
+  margin-top: 5px;
 }
 
-/* ─── HERO LABEL (legacy, gardé pour compat) ─── */
-.hero-label {
-  display: none;
-}
+/* ─── HERO LABEL (legacy) ─── */
+.hero-label { display: none; }
 
 /* Keep .hero-title for other pages */
 .hero-title {
@@ -507,6 +566,11 @@ img {
   text-transform: uppercase;
   color: var(--gray);
   margin-bottom: 2.5rem;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
 }
 
 /* ============================================
@@ -661,21 +725,7 @@ img {
   .btn:hover { transform: none !important; }
 }
 
-/* ============================================
-   COUNTDOWN
-   ============================================ */
-.hero-countdown {
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 8px;
-  overflow: hidden;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
+/* .countdown-label — utilisé sur d'autres pages uniquement */
 .countdown-label {
   padding: 0.6rem 1.2rem;
   display: flex;
@@ -686,50 +736,9 @@ img {
   font-weight: 500;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: rgba(180, 180, 180, 0.75);
+  color: rgba(180,180,180,0.75);
   border-right: 1px solid rgba(255,255,255,0.07);
   white-space: nowrap;
-}
-
-.countdown-label svg {
-  color: rgba(180, 180, 180, 0.5);
-}
-
-.countdown-items {
-  display: flex;
-  align-items: center;
-}
-
-.countdown-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.6rem 1.1rem;
-  border-right: 1px solid rgba(255,255,255,0.05);
-  min-width: 62px;
-}
-
-.countdown-item:last-child {
-  border-right: none;
-}
-
-.countdown-number {
-  font-family: var(--font-display);
-  font-size: 1.9rem;
-  line-height: 1;
-  color: var(--white);
-  letter-spacing: 2px;
-  font-variant-numeric: tabular-nums;
-}
-
-.countdown-unit {
-  font-family: var(--font-body);
-  font-size: 0.52rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gray);
-  margin-top: 3px;
 }
 
 /* ============================================
@@ -2570,51 +2579,13 @@ section {
   .nav-links a { font-size: 1rem; letter-spacing: 4px; }
   .nav-toggle { display: flex; z-index: 1001; }
 
-  /* Hero */
-  .hero-content {
-    padding: 0 0.5rem;
-    text-align: center;
-    align-items: center;
-  }
-  .hero-wordmark {
-    gap: 0.3rem;
-    justify-content: center;
-  }
-  .hero-wordmark-rise,
-  .hero-wordmark-vibes {
-    font-size: clamp(3.2rem, 14vw, 5.5rem);
-  }
-  .hero-wordmark-amp {
-    font-size: clamp(2.2rem, 10vw, 4rem);
-  }
-  .hero-tagline {
-    font-size: 0.7rem;
-    letter-spacing: 4px;
-  }
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    width: 100%;
-  }
-  .btn-hero-primary,
-  .btn-hero-ghost {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-  .hero-countdown {
-    align-items: center;
-  }
-  .countdown-items {
-    gap: 0.6rem;
-  }
-  .countdown-number {
-    font-size: 1.6rem;
-  }
-  .countdown-sep {
-    font-size: 1.4rem;
-  }
+  /* Hero — tablette portrait */
+  .hero-content { padding: 0 1.5rem; gap: 2rem; }
+  .hero-logo { max-width: 420px; }
+  .hero-wordmark { width: min(100%, 410px); }
+  .hero-emblem { margin-bottom: 0.7rem; }
+  .countdown-item { min-width: 58px; padding: 0.65rem 1rem; }
+  .countdown-number { font-size: 1.8rem; }
   .scroll-indicator { display: none; }
 
   /* Nouveautés / Drop banner */
@@ -2715,15 +2686,17 @@ section {
   .container { padding: 0 1rem; }
   section    { padding: 3rem 0; }
 
-  /* Hero */
-  .hero-wordmark-rise,
-  .hero-wordmark-vibes {
-    font-size: clamp(2.8rem, 18vw, 4.5rem);
+  /* Hero — mobile standard */
+  .hero-logo { max-width: 360px; }
+  .hero-emblem {
+    width: clamp(124px, 24vw, 158px);
+    height: clamp(124px, 24vw, 158px);
   }
-  .hero-wordmark-amp {
-    font-size: clamp(2rem, 13vw, 3.5rem);
+  .hero-word-top,
+  .hero-word-bottom {
+    letter-spacing: 0.2em;
+    padding-left: 0.2em;
   }
-  .hero-eyebrow { font-size: 0.58rem; letter-spacing: 4px; }
 
   /* Nouveautés */
   .drop-title { font-size: clamp(2.8rem, 18vw, 4rem); }
@@ -2776,13 +2749,16 @@ section {
 
 /* ── 375px — Petit mobile ────────────────────── */
 @media (max-width: 375px) {
-  .hero-wordmark { gap: 0.15rem; }
-  .hero-wordmark-rise,
-  .hero-wordmark-vibes { font-size: 2.6rem; }
-  .hero-wordmark-amp   { font-size: 1.8rem; }
+  .hero-logo { max-width: 300px; }
+  .hero-wordmark { width: min(100%, 280px); }
+  .hero-emblem {
+    width: 114px;
+    height: 114px;
+    margin-bottom: 0.82rem;
+  }
+  .countdown-items { max-width: 300px; }
 
   .drop-title { font-size: 2.6rem; }
-
   .nav { padding: 0 1rem; }
   .nav-logo-text { font-size: 1rem; }
 }
@@ -2808,73 +2784,69 @@ section {
   .nav-logo-text { font-size: 1.2rem; letter-spacing: 3px; }
 
   /* ── Hero section mobile ── */
+  /* ── Hero mobile ── */
   .hero {
     min-height: 100svh;
-    align-items: center;
-    padding-top: 60px;
+    justify-content: center;
+    background-position: center 30%;
   }
-
-  /* Canvas sphere allégé sur mobile */
-  #sphere-canvas { opacity: 0.5; }
 
   .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.2rem;
-    padding: 0 1.4rem;
-    width: 100%;
+    gap: 2rem;
+    padding: 2rem 1.6rem;
   }
 
-  .hero-eyebrow {
-    font-size: 0.6rem;
-    letter-spacing: 5px;
-    margin-bottom: 0;
+  .hero-logo { max-width: 340px; }
+  .hero-wordmark { width: min(100%, 320px); }
+  .hero-emblem {
+    width: clamp(130px, 28vw, 170px);
+    height: clamp(130px, 28vw, 170px);
+    margin-bottom: 0.95rem;
+  }
+  .hero-word-top,
+  .hero-word-bottom {
+    font-size: clamp(3.4rem, 17vw, 4.8rem);
+    letter-spacing: 0.18em;
+    padding-left: 0.18em;
+  }
+  .hero-word-and {
+    font-size: clamp(1.45rem, 6vw, 2rem);
+    letter-spacing: 0.34em;
+    padding-left: 0.34em;
+    padding-inline: 1.2em 0.86em;
+  }
+  .hero-word-and::before,
+  .hero-word-and::after {
+    width: clamp(34px, 11vw, 58px);
+  }
+  .hero-word-and-glow {
+    width: 140%;
+    height: 220%;
+    filter: blur(8px);
   }
 
-  .hero-wordmark {
-    flex-direction: column;
-    gap: 0;
-    line-height: 0.85;
-  }
-  .hero-wordmark-rise  { font-size: clamp(4rem, 22vw, 6rem); }
-  .hero-wordmark-amp   { font-size: clamp(2.8rem, 16vw, 4.5rem); line-height: 0.9; }
-  .hero-wordmark-vibes { font-size: clamp(4rem, 22vw, 6rem); }
-
-  .hero-tagline {
-    font-size: 0.62rem;
-    letter-spacing: 4px;
-    margin-bottom: 0;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 320px;
-    gap: 0.7rem;
-  }
-  .btn-hero-primary,
-  .btn-hero-ghost {
-    width: 100%;
-    justify-content: center;
-    font-size: 0.8rem;
-    padding: 0.9rem 1.5rem;
-    min-height: 48px;
-  }
-
+  /* Countdown mobile */
   .hero-countdown {
-    margin-top: 0.5rem;
+    width: 100%;
+    gap: 0.65rem;
   }
   .countdown-release-label {
-    font-size: 0.55rem;
+    font-size: 0.48rem;
     letter-spacing: 3px;
   }
-  .countdown-items { gap: 0.4rem; }
-  .countdown-number { font-size: 1.5rem; }
-  .countdown-unit   { font-size: 0.5rem; letter-spacing: 1px; }
-  .countdown-sep    { font-size: 1.3rem; }
+  .countdown-items {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .countdown-item {
+    flex: 1;
+    min-width: 0;
+    padding: 0.6rem 0.4rem;
+  }
+  .countdown-number { font-size: 1.4rem; letter-spacing: 1px; }
+  .countdown-unit   { font-size: 0.4rem; letter-spacing: 1px; }
+  .countdown-sep    { font-size: 1.1rem; padding: 0.6rem 0.15rem; }
 
   /* ── Nouveautés mobile ── */
   .nouveautes { padding: 3.5rem 0 3rem; }

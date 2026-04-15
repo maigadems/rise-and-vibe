@@ -11,19 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(22px); }
+      from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
     .hero-content > * {
-      animation: fadeInUp 0.75s cubic-bezier(0.16,1,0.3,1) forwards;
+      animation: fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
       opacity: 0;
     }
-    .hero-label        { animation-delay: 0.15s; }
-    .hero-wordmark     { animation-delay: 0.3s; }
-    .hero-studio-line  { animation-delay: 0.42s; }
-    .hero-subtitle     { animation-delay: 0.5s; }
-    .hero-actions      { animation-delay: 0.62s; }
-    .hero-countdown    { animation-delay: 0.78s; }
+    .hero-logo       { animation-delay: 0.15s; }
+    .hero-countdown  { animation-delay: 0.7s; }
   </style>
 </head>
 <body>
@@ -49,31 +45,21 @@
 
 <!-- =================== HERO =================== -->
 <section class="hero" id="hero">
-  <canvas id="sphere-canvas"></canvas>
   <div class="hero-gradient"></div>
   <div class="hero-noise"></div>
 
   <div class="hero-content">
 
-    <p class="hero-eyebrow">Dakar &nbsp;·&nbsp; Sénégal</p>
-
-    <h1 class="hero-wordmark" aria-label="Rise &amp; Vibes">
-      <span class="hero-wordmark-rise">RISE</span>
-      <span class="hero-wordmark-amp">&amp;</span>
-      <span class="hero-wordmark-vibes">VIBES</span>
-    </h1>
-
-    <p class="hero-tagline">Where Sound Becomes Legacy</p>
-
-    <div class="hero-actions">
-      <a href="#tarifs" class="btn btn-hero-primary">Nos tarifs</a>
-      <a href="#artistes" class="btn btn-hero-ghost">
-        Les artistes
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
+    <div class="hero-logo">
+      <div class="hero-wordmark" role="img" aria-label="Rise and Vibes">
+        <span class="hero-emblem" aria-hidden="true"></span>
+        <span class="hero-word hero-word-top">RISE</span>
+        <span class="hero-word hero-word-and"><span class="hero-word-and-glow" aria-hidden="true"></span><span>AND</span></span>
+        <span class="hero-word hero-word-bottom">VIBES</span>
+      </div>
     </div>
 
-    <!-- Countdown flottant -->
+    <!-- Countdown sortie -->
     <div class="hero-countdown">
       <span class="countdown-release-label">Sortie &mdash; Lep Lumu Lajj</span>
       <div class="countdown-items">
@@ -661,7 +647,6 @@
   </div>
 </footer>
 
-<script src="js/sphere.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
